@@ -7,8 +7,15 @@ public class PlayerStateMachine : StateMachine
     public Player Player { get; }
 
     //ป๓ลย
-    public PlayerIdleState idleState { get; }
+    public PlayerIdleState IdleState { get; }
+    public PlayerWalkState WalkState { get; }
+    public PlayerRunState RunState { get; }
 
+    public PlayerJumpState JumpState { get; }
+    public PlayerFallState FallState { get; }
+
+
+    public PlayerComboAttackState ComboAttackState { get; }
     public Vector2 MovementInput {  get; set; }
     public float MovementSpeed {  get; private set; }
     public float RotationDamping { get; private set; }
@@ -16,6 +23,9 @@ public class PlayerStateMachine : StateMachine
 
     public float JumpForce { get; set; }
 
+
+    public bool IsAttacking { get; set; }
+    public int ComboIndex { get; set; }
     public Transform MainCameraTransform { get; set; }
 
 
@@ -23,7 +33,14 @@ public class PlayerStateMachine : StateMachine
     {
         this.Player = player;
 
-        idleState = new PlayerIdleState(this);
+        IdleState = new PlayerIdleState(this);
+        WalkState = new PlayerWalkState(this);
+        RunState = new PlayerRunState(this);
+
+        JumpState = new PlayerJumpState(this);
+        FallState = new PlayerFallState(this);
+
+        ComboAttackState = new PlayerComboAttackState(this);
 
         MainCameraTransform = Camera.main.transform;
 
