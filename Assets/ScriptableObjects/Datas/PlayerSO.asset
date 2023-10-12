@@ -26,7 +26,7 @@ MonoBehaviour:
       <ComboTransitionTime>k__BackingField: 0.8
       <ForceTransitionTime>k__BackingField: 0.1
       <Force>k__BackingField: 1
-      <Damage>k__BackingField: 5
+      <Damage>k__BackingField: 50
     - <AttackName>k__BackingField: "\uAE30\uBCF8 2\uD0C0"
       <ComboStateIndex>k__BackingField: 2
       <ComboTransitionTime>k__BackingField: 0.8
